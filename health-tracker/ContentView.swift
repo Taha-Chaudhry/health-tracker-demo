@@ -9,6 +9,66 @@ import SwiftUI
 import CoreData
 import os
 
+func loadMockUserData(context: NSManagedObjectContext) {
+   guard let url = Bundle.main.url(forResource: "mockUserData", withExtension: "json") else {
+      ViewModel().logger.error("JSON file not found")
+      return
+   }
+   
+   do {
+      let data = try Data(contentsOf: url)
+      
+      let decoder = JSONDecoder()
+      let response = try decoder.decode(Response.self, from: data)
+      
+      let myUser = User(context: context)
+      myUser.id = UUID()
+      myUser.name = response.user.name
+      myUser.age = Int16(response.user.age)
+      myUser.weight = Int16(response.user.weight)
+      myUser.sex = response.user.sex
+      
+      
+      let myActivity = Activity(context: context)
+      myActivity.id = UUID()
+      myActivity.name = response.user.activity.name
+      myActivity.averageHeartbeat = Int16(response.user.activity.averageHeartbeat)
+      myActivity.caloriesBurned = Int16(response.user.activity.caloriesBurned)
+      myActivity.timeElapsed = Int16(response.user.activity.timeElapsed)
+      
+      myUser.activity = myActivity
+      
+      let myFoodLog = FoodLog(context: context)
+      myFoodLog.id = UUID()
+      var totalCalories = 0
+      var mealsHad = 0
+      
+      for foodItemResponse in response.user.foodLog.items {
+         let myFoodItem = FoodItem(context: context)
+         myFoodItem.id = UUID()
+         myFoodItem.name = foodItemResponse.name
+         myFoodItem.calories = Int16(foodItemResponse.calories)
+         
+         totalCalories += foodItemResponse.calories
+         mealsHad += 1
+         
+         myFoodLog.addItem(myFoodItem)
+      }
+      
+      myFoodLog.caloriesConsumed = Int16(totalCalories)
+      myFoodLog.mealsHad = Int16(mealsHad)
+      
+      myUser.foodLog = myFoodLog
+      
+      try context.save()
+      
+   } catch {
+      ViewModel().logger.error("Failed to load and parse JSON mock data: \(error)")
+   }
+}
+
+
+
 
 struct Response: Decodable {
     let user: UserResponse
@@ -75,7 +135,7 @@ struct ContentView: View {
 
 // MARK: ViewModel
 class ViewModel: ObservableObject {
-   private static let logger = Logger(
+   public let logger = Logger(
       subsystem: Bundle.main.bundleIdentifier!,
       category: String(describing: ViewModel.self)
    )
@@ -129,6 +189,7 @@ class ViewModel: ObservableObject {
       if mockServerEnabled {
          networkRequestData()
       } else {
+         loadMockUserData(context: viewContext)
          fetchUsers()
          fetchFoodLog()
          fetchActivity()
@@ -144,7 +205,7 @@ class ViewModel: ObservableObject {
       request.setValue("application/json", forHTTPHeaderField: "Content-Type")
       let task = URLSession.shared.dataTask(with: request) { data, _, error  in
          if let error = error {
-            print("Error while fetching data:", error)
+            self.logger.error("Error while fetching data: \(error)")
             return
          }
          
@@ -160,6 +221,7 @@ class ViewModel: ObservableObject {
    }
    
    func login() {
+      logger.info("Logging in")
       guard !(name == "" && sex == "") else {
          showNamePresenceError = true
          showSexPresenceError = true
@@ -207,6 +269,7 @@ class ViewModel: ObservableObject {
    }
    
    func logout() {
+      logger.info("Logging out")
       isLoggedIn = false
    }
    
@@ -216,7 +279,7 @@ class ViewModel: ObservableObject {
          let request: NSFetchRequest<User> = User.fetchRequest()
          users = try viewContext.fetch(request)
       } catch {
-         print("Error fetching data: \(error)")
+         logger.error("Error fetching data: \(error)")
       }
    }
    
@@ -225,7 +288,7 @@ class ViewModel: ObservableObject {
          guard let self = self else { return }
          
          do {
-            guard let _ = user.id else { return print("No user with that id") }
+            guard let _ = user.id else { return logger.error("No user with that id") }
             
             let request: NSFetchRequest<FoodLog> = FoodLog.fetchRequest()
             request.predicate = NSPredicate(format: "user.id == %@", user.id! as NSUUID)
@@ -238,7 +301,7 @@ class ViewModel: ObservableObject {
             }
             
          } catch {
-            print("Error fetching food log")
+            logger.error("Error fetching food log: \(error)")
          }
       }
    }
@@ -248,7 +311,7 @@ class ViewModel: ObservableObject {
          guard let self = self else { return }
          
          do {
-            guard let _ = user.id else { return print("No user with that id") }
+            guard let _ = user.id else { return logger.error("No user with that id") }
             
             let request: NSFetchRequest<Activity> = Activity.fetchRequest()
             request.predicate = NSPredicate(format: "user.id == %@", user.id! as NSUUID)
@@ -259,13 +322,13 @@ class ViewModel: ObservableObject {
                self.activities = fetchedActivities
             }
          } catch {
-            print("Error fetching data: \(error)")
+            logger.error("Error fetching data: \(error)")
          }
       }
    }
    
    func deleteEntity(_ entity: NSManagedObject) {
-      guard let entityName = entity.entity.name else { return print("Couldn't find \(entity) to delete") }
+      guard let entityName = entity.entity.name else { return logger.error("Couldn't find \(entity) to delete") }
       let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
       fetchRequest.predicate = NSPredicate(format: "SELF == %@", entity.objectID)
       let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -274,8 +337,88 @@ class ViewModel: ObservableObject {
          try viewContext.execute(batchDeleteRequest)
          try viewContext.save()
       } catch {
-         print("Failed to delete entity: \(error.localizedDescription)")
+         logger.error("Failed to delete entity: \(error.localizedDescription)")
       }
+   }
+   
+   func checkForUpdates() {
+      logger.info("Checking for updates")
+//
+//      let request: NSFetchRequest<User> = User.fetchRequest()
+//      request.predicate = NSPredicate(format: "id == %@", user.id! as NSUUID)
+//
+//      do {
+//         let result = try viewContext.fetch(request)
+//         
+//         // If no user with this id is found, load mock data
+//         if result.isEmpty {
+//            logger.info("User not found, loading mock data")
+//            loadMockUserData(context: viewContext)
+//         } else {
+//            logger.info("User with this ID exists")
+//         }
+//         
+//      } catch {
+//         logger.error("Failed to fetch user: \(error)")
+//         loadMockUserData(context: viewContext) // Optionally handle errors by loading mock data
+//      }
+      
+//      guard let _ = user.id else {
+//         loadMockUserData(context: viewContext)
+//         return
+//      }
+      
+      
+//      guard let url = Bundle.main.url(forResource: "mockUserData", withExtension: "json"),
+//            let data = try? Data(contentsOf: url) else {
+//         logger.error("Failed to load mockUserData.json")
+//         return
+//      }
+//      
+//      let decoder = JSONDecoder()
+//      guard let response = try? decoder.decode(Response.self, from: data) else {
+//         logger.error("Failed to decode JSON data")
+//         return
+//      }
+//      
+//      guard let items = foodLog.items as? Set<FoodItem> else {
+//         return
+//      }
+//      
+//      let foodLogArray = Array(items).sorted { $0.wrappedName < $1.wrappedName }
+//      
+//      let currentFoodLog = FoodLogResponse(items: foodLogArray.map { FoodItemResponse(name: $0.wrappedName, calories: Int($0.calories)) } )
+//      
+//      let currentActivity = ActivityResponse(
+//         name: activity.wrappedName,
+//         averageHeartbeat: Int(activity.averageHeartbeat),
+//         caloriesBurned: Int(activity.caloriesBurned),
+//         timeElapsed: Int(activity.timeElapsed)
+//      )
+//      
+//      let currentUser = UserResponse(
+//         name: self.name,
+//         sex: self.sex,
+//         age: self.age,
+//         weight: self.weight,
+//         activity: currentActivity,
+//         foodLog: currentFoodLog
+//      )
+//      
+//      if response.user != currentUser {
+//         deleteEntity(user)
+//         users = []
+//         deleteEntity(activity)
+//         activities = []
+//         deleteEntity(foodLog)
+//         foodLogs = []
+//         
+//         storeInCoreData(response: response)
+//         
+//         logger.info("ViewModel data updated from JSON")
+//      } else {
+//         logger.info("ViewModel data is up-to-date")
+//      }
    }
    
    func storeInCoreData(response: Response) {
@@ -318,7 +461,7 @@ class ViewModel: ObservableObject {
          self.fetchFoodLog()
          self.fetchActivity()
       } catch {
-         print("Failed to save data to Core Data: \(error)")
+         logger.error("Failed to save data to Core Data: \(error)")
       }
    }
 }
