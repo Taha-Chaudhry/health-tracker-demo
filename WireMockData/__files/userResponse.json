@@ -1,0 +1,30 @@
+{
+    "user": {
+        "name": "Luke Skywalker",
+        "sex": "Male",
+        "age": 26,
+        "weight": 165,
+        "activity": {
+            "name": "Training",
+            "averageHeartbeat": 50,
+            "caloriesBurned": 1239,
+            "timeElapsed": 2229
+        },
+        "foodLog": {
+            "items": [
+                {
+                    "name": "Purple Juice",
+                    "calories": 200
+                },
+                {
+                    "name": "Naboo Soup",
+                    "calories": 760
+                },
+                {
+                    "name": "Wookie Chewsticks",
+                    "calories": 1940
+                }
+            ]
+        }
+    }
+}

@@ -7,25 +7,125 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A00ADC92C74B36F0019D2F6 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADC72C74B36F0019D2F6 /* Activity+CoreDataClass.swift */; };
+		2A00ADCA2C74B36F0019D2F6 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADC82C74B36F0019D2F6 /* Activity+CoreDataProperties.swift */; };
+		2A00ADCE2C74C8400019D2F6 /* FoodLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADCD2C74C8400019D2F6 /* FoodLogView.swift */; };
+		2A00ADD02C74C93B0019D2F6 /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADCF2C74C93B0019D2F6 /* MetricsView.swift */; };
+		2A00ADD22C74CD930019D2F6 /* ActivitySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADD12C74CD930019D2F6 /* ActivitySummaryView.swift */; };
+		2A00ADD42C74DB660019D2F6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADD32C74DB660019D2F6 /* ProfileView.swift */; };
+		2A00ADDB2C74DD960019D2F6 /* Vitals+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADD72C74DD950019D2F6 /* Vitals+CoreDataClass.swift */; };
+		2A00ADDC2C74DD960019D2F6 /* Vitals+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADD82C74DD950019D2F6 /* Vitals+CoreDataProperties.swift */; };
+		2A00ADDF2C74DF1B0019D2F6 /* Steps+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADDD2C74DF1B0019D2F6 /* Steps+CoreDataClass.swift */; };
+		2A00ADE02C74DF1B0019D2F6 /* Steps+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADDE2C74DF1B0019D2F6 /* Steps+CoreDataProperties.swift */; };
+		2A00ADE22C761ABF0019D2F6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADE12C761ABF0019D2F6 /* LoginView.swift */; };
+		2A00AE072C77191D0019D2F6 /* health_tracker_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00AE062C77191D0019D2F6 /* health_tracker_tests.swift */; };
+		2A00AE0F2C771DC20019D2F6 /* userResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A00AE0E2C771DC20019D2F6 /* userResponse.json */; };
+		2A00AE132C771E590019D2F6 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A00AE122C771E590019D2F6 /* user.json */; };
+		2A1483582C7C590E009A64F2 /* mockUserData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A1483572C7C590E009A64F2 /* mockUserData.json */; };
 		2A6A50652C71AE3900BA5597 /* health_trackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A50642C71AE3900BA5597 /* health_trackerApp.swift */; };
 		2A6A50672C71AE3900BA5597 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A50662C71AE3900BA5597 /* ContentView.swift */; };
 		2A6A50692C71AE3A00BA5597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A50682C71AE3A00BA5597 /* Assets.xcassets */; };
 		2A6A506C2C71AE3A00BA5597 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A506B2C71AE3A00BA5597 /* Preview Assets.xcassets */; };
 		2A6A506E2C71AE3A00BA5597 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A506D2C71AE3A00BA5597 /* Persistence.swift */; };
-		2A6A50712C71AE3A00BA5597 /* health_tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A506F2C71AE3A00BA5597 /* health_tracker.xcdatamodeld */; };
+		2A6A50792C71AEC900BA5597 /* health_tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A50772C71AEC900BA5597 /* health_tracker.xcdatamodeld */; };
+		2A80BC5B2C7C543D00483007 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A80BC5A2C7C543C00483007 /* WidgetKit.framework */; };
+		2A80BC5D2C7C543D00483007 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A80BC5C2C7C543D00483007 /* SwiftUI.framework */; };
+		2A80BC602C7C543D00483007 /* StepsWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80BC5F2C7C543D00483007 /* StepsWidgetBundle.swift */; };
+		2A80BC622C7C543D00483007 /* StepsWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80BC612C7C543D00483007 /* StepsWidgetLiveActivity.swift */; };
+		2A80BC642C7C543D00483007 /* StepsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80BC632C7C543D00483007 /* StepsWidget.swift */; };
+		2A80BC662C7C543E00483007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A80BC652C7C543E00483007 /* Assets.xcassets */; };
+		2A80BC6A2C7C543E00483007 /* StepsWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2A80BC592C7C543C00483007 /* StepsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2AF010272C7237E9006D47C8 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF010252C7237E9006D47C8 /* User+CoreDataClass.swift */; };
+		2AF010282C7237E9006D47C8 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF010262C7237E9006D47C8 /* User+CoreDataProperties.swift */; };
+		2AF010332C723AC9006D47C8 /* FoodItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0102B2C723AC9006D47C8 /* FoodItem+CoreDataClass.swift */; };
+		2AF010342C723AC9006D47C8 /* FoodItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0102C2C723AC9006D47C8 /* FoodItem+CoreDataProperties.swift */; };
+		2AF010372C723AC9006D47C8 /* FoodLog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0102F2C723AC9006D47C8 /* FoodLog+CoreDataClass.swift */; };
+		2AF010382C723AC9006D47C8 /* FoodLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF010302C723AC9006D47C8 /* FoodLog+CoreDataProperties.swift */; };
+		2AF0103E2C730632006D47C8 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0103D2C730632006D47C8 /* Styles.swift */; };
+		2AF010402C732E5D006D47C8 /* AddingFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0103F2C732E5D006D47C8 /* AddingFoodView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2A00AE082C77191D0019D2F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A6A50592C71AE3900BA5597 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A6A50602C71AE3900BA5597;
+			remoteInfo = "health-tracker";
+		};
+		2A80BC682C7C543E00483007 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A6A50592C71AE3900BA5597 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A80BC582C7C543C00483007;
+			remoteInfo = StepsWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2A80BC6E2C7C543E00483007 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2A80BC6A2C7C543E00483007 /* StepsWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2A00ADC72C74B36F0019D2F6 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2A00ADC82C74B36F0019D2F6 /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2A00ADCD2C74C8400019D2F6 /* FoodLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLogView.swift; sourceTree = "<group>"; };
+		2A00ADCF2C74C93B0019D2F6 /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
+		2A00ADD12C74CD930019D2F6 /* ActivitySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySummaryView.swift; sourceTree = "<group>"; };
+		2A00ADD32C74DB660019D2F6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2A00ADD72C74DD950019D2F6 /* Vitals+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vitals+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2A00ADD82C74DD950019D2F6 /* Vitals+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vitals+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2A00ADDD2C74DF1B0019D2F6 /* Steps+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Steps+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2A00ADDE2C74DF1B0019D2F6 /* Steps+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Steps+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2A00ADE12C761ABF0019D2F6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2A00AE042C77191D0019D2F6 /* health-tracker-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "health-tracker-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A00AE062C77191D0019D2F6 /* health_tracker_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = health_tracker_tests.swift; sourceTree = "<group>"; };
+		2A00AE0E2C771DC20019D2F6 /* userResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userResponse.json; sourceTree = "<group>"; };
+		2A00AE122C771E590019D2F6 /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
+		2A1483572C7C590E009A64F2 /* mockUserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockUserData.json; sourceTree = "<group>"; };
 		2A6A50612C71AE3900BA5597 /* health-tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "health-tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A6A50642C71AE3900BA5597 /* health_trackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = health_trackerApp.swift; sourceTree = "<group>"; };
-		2A6A50662C71AE3900BA5597 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2A6A50662C71AE3900BA5597 /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A6A50682C71AE3A00BA5597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A6A506B2C71AE3A00BA5597 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A6A506D2C71AE3A00BA5597 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		2A6A50702C71AE3A00BA5597 /* health_tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = health_tracker.xcdatamodel; sourceTree = "<group>"; };
+		2A6A50782C71AEC900BA5597 /* health_tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = health_tracker.xcdatamodel; sourceTree = "<group>"; };
+		2A80BC592C7C543C00483007 /* StepsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StepsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A80BC5A2C7C543C00483007 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		2A80BC5C2C7C543D00483007 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		2A80BC5F2C7C543D00483007 /* StepsWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsWidgetBundle.swift; sourceTree = "<group>"; };
+		2A80BC612C7C543D00483007 /* StepsWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		2A80BC632C7C543D00483007 /* StepsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsWidget.swift; sourceTree = "<group>"; };
+		2A80BC652C7C543E00483007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A80BC672C7C543E00483007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AF010252C7237E9006D47C8 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2AF010262C7237E9006D47C8 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2AF0102B2C723AC9006D47C8 /* FoodItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2AF0102C2C723AC9006D47C8 /* FoodItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2AF0102F2C723AC9006D47C8 /* FoodLog+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodLog+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2AF010302C723AC9006D47C8 /* FoodLog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2AF0103D2C730632006D47C8 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		2AF0103F2C732E5D006D47C8 /* AddingFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingFoodView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2A00AE012C77191D0019D2F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A6A505E2C71AE3900BA5597 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,14 +133,81 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A80BC562C7C543C00483007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A80BC5D2C7C543D00483007 /* SwiftUI.framework in Frameworks */,
+				2A80BC5B2C7C543D00483007 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A00ADE62C76F8040019D2F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A80BC5A2C7C543C00483007 /* WidgetKit.framework */,
+				2A80BC5C2C7C543D00483007 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A00AE052C77191D0019D2F6 /* health-tracker-tests */ = {
+			isa = PBXGroup;
+			children = (
+				2A00AE062C77191D0019D2F6 /* health_tracker_tests.swift */,
+			);
+			path = "health-tracker-tests";
+			sourceTree = "<group>";
+		};
+		2A00AE0D2C771D850019D2F6 /* WireMockData */ = {
+			isa = PBXGroup;
+			children = (
+				2A00AE102C771E1A0019D2F6 /* __files */,
+				2A00AE112C771E2B0019D2F6 /* mappings */,
+			);
+			path = WireMockData;
+			sourceTree = "<group>";
+		};
+		2A00AE102C771E1A0019D2F6 /* __files */ = {
+			isa = PBXGroup;
+			children = (
+				2A00AE0E2C771DC20019D2F6 /* userResponse.json */,
+			);
+			path = __files;
+			sourceTree = "<group>";
+		};
+		2A00AE112C771E2B0019D2F6 /* mappings */ = {
+			isa = PBXGroup;
+			children = (
+				2A00AE122C771E590019D2F6 /* user.json */,
+			);
+			path = mappings;
+			sourceTree = "<group>";
+		};
 		2A6A50582C71AE3900BA5597 = {
 			isa = PBXGroup;
 			children = (
+				2A00ADDD2C74DF1B0019D2F6 /* Steps+CoreDataClass.swift */,
+				2A00ADDE2C74DF1B0019D2F6 /* Steps+CoreDataProperties.swift */,
+				2A00ADD72C74DD950019D2F6 /* Vitals+CoreDataClass.swift */,
+				2A00ADD82C74DD950019D2F6 /* Vitals+CoreDataProperties.swift */,
+				2A00ADC72C74B36F0019D2F6 /* Activity+CoreDataClass.swift */,
+				2A00ADC82C74B36F0019D2F6 /* Activity+CoreDataProperties.swift */,
+				2AF0102B2C723AC9006D47C8 /* FoodItem+CoreDataClass.swift */,
+				2AF0102C2C723AC9006D47C8 /* FoodItem+CoreDataProperties.swift */,
+				2AF0102F2C723AC9006D47C8 /* FoodLog+CoreDataClass.swift */,
+				2AF010302C723AC9006D47C8 /* FoodLog+CoreDataProperties.swift */,
+				2AF010252C7237E9006D47C8 /* User+CoreDataClass.swift */,
+				2AF010262C7237E9006D47C8 /* User+CoreDataProperties.swift */,
+				2A00AE0D2C771D850019D2F6 /* WireMockData */,
 				2A6A50632C71AE3900BA5597 /* health-tracker */,
+				2A00AE052C77191D0019D2F6 /* health-tracker-tests */,
+				2A80BC5E2C7C543D00483007 /* StepsWidget */,
 				2A6A50622C71AE3900BA5597 /* Products */,
+				2A00ADE62C76F8040019D2F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				2A6A50612C71AE3900BA5597 /* health-tracker.app */,
+				2A00AE042C77191D0019D2F6 /* health-tracker-tests.xctest */,
+				2A80BC592C7C543C00483007 /* StepsWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,9 +226,17 @@
 			children = (
 				2A6A50642C71AE3900BA5597 /* health_trackerApp.swift */,
 				2A6A50662C71AE3900BA5597 /* ContentView.swift */,
+				2A00ADE12C761ABF0019D2F6 /* LoginView.swift */,
+				2A00ADD12C74CD930019D2F6 /* ActivitySummaryView.swift */,
+				2A00ADCF2C74C93B0019D2F6 /* MetricsView.swift */,
+				2A00ADCD2C74C8400019D2F6 /* FoodLogView.swift */,
+				2AF0103F2C732E5D006D47C8 /* AddingFoodView.swift */,
+				2AF0103D2C730632006D47C8 /* Styles.swift */,
+				2A00ADD32C74DB660019D2F6 /* ProfileView.swift */,
 				2A6A50682C71AE3A00BA5597 /* Assets.xcassets */,
+				2A1483572C7C590E009A64F2 /* mockUserData.json */,
 				2A6A506D2C71AE3A00BA5597 /* Persistence.swift */,
-				2A6A506F2C71AE3A00BA5597 /* health_tracker.xcdatamodeld */,
+				2A6A50772C71AEC900BA5597 /* health_tracker.xcdatamodeld */,
 				2A6A506A2C71AE3A00BA5597 /* Preview Content */,
 			);
 			path = "health-tracker";
@@ -73,9 +250,39 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2A80BC5E2C7C543D00483007 /* StepsWidget */ = {
+			isa = PBXGroup;
+			children = (
+				2A80BC5F2C7C543D00483007 /* StepsWidgetBundle.swift */,
+				2A80BC612C7C543D00483007 /* StepsWidgetLiveActivity.swift */,
+				2A80BC632C7C543D00483007 /* StepsWidget.swift */,
+				2A80BC652C7C543E00483007 /* Assets.xcassets */,
+				2A80BC672C7C543E00483007 /* Info.plist */,
+			);
+			path = StepsWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2A00AE032C77191D0019D2F6 /* health-tracker-tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A00AE0A2C77191D0019D2F6 /* Build configuration list for PBXNativeTarget "health-tracker-tests" */;
+			buildPhases = (
+				2A00AE002C77191D0019D2F6 /* Sources */,
+				2A00AE012C77191D0019D2F6 /* Frameworks */,
+				2A00AE022C77191D0019D2F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A00AE092C77191D0019D2F6 /* PBXTargetDependency */,
+			);
+			name = "health-tracker-tests";
+			productName = "health-tracker-tests";
+			productReference = 2A00AE042C77191D0019D2F6 /* health-tracker-tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2A6A50602C71AE3900BA5597 /* health-tracker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A6A50742C71AE3A00BA5597 /* Build configuration list for PBXNativeTarget "health-tracker" */;
@@ -83,15 +290,36 @@
 				2A6A505D2C71AE3900BA5597 /* Sources */,
 				2A6A505E2C71AE3900BA5597 /* Frameworks */,
 				2A6A505F2C71AE3900BA5597 /* Resources */,
+				2A80BC6E2C7C543E00483007 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A80BC692C7C543E00483007 /* PBXTargetDependency */,
+			);
+			name = "health-tracker";
+			packageProductDependencies = (
+			);
+			productName = "health-tracker";
+			productReference = 2A6A50612C71AE3900BA5597 /* health-tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A80BC582C7C543C00483007 /* StepsWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A80BC6B2C7C543E00483007 /* Build configuration list for PBXNativeTarget "StepsWidgetExtension" */;
+			buildPhases = (
+				2A80BC552C7C543C00483007 /* Sources */,
+				2A80BC562C7C543C00483007 /* Frameworks */,
+				2A80BC572C7C543C00483007 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "health-tracker";
-			productName = "health-tracker";
-			productReference = 2A6A50612C71AE3900BA5597 /* health-tracker.app */;
-			productType = "com.apple.product-type.application";
+			name = StepsWidgetExtension;
+			productName = StepsWidgetExtension;
+			productReference = 2A80BC592C7C543C00483007 /* StepsWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -103,7 +331,14 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					2A00AE032C77191D0019D2F6 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 2A6A50602C71AE3900BA5597;
+					};
 					2A6A50602C71AE3900BA5597 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					2A80BC582C7C543C00483007 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -117,42 +352,150 @@
 				Base,
 			);
 			mainGroup = 2A6A50582C71AE3900BA5597;
+			packageReferences = (
+			);
 			productRefGroup = 2A6A50622C71AE3900BA5597 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				2A6A50602C71AE3900BA5597 /* health-tracker */,
+				2A00AE032C77191D0019D2F6 /* health-tracker-tests */,
+				2A80BC582C7C543C00483007 /* StepsWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2A00AE022C77191D0019D2F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A6A505F2C71AE3900BA5597 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2A6A506C2C71AE3A00BA5597 /* Preview Assets.xcassets in Resources */,
+				2A00AE132C771E590019D2F6 /* user.json in Resources */,
+				2A00AE0F2C771DC20019D2F6 /* userResponse.json in Resources */,
 				2A6A50692C71AE3A00BA5597 /* Assets.xcassets in Resources */,
+				2A1483582C7C590E009A64F2 /* mockUserData.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A80BC572C7C543C00483007 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A80BC662C7C543E00483007 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2A00AE002C77191D0019D2F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A00AE072C77191D0019D2F6 /* health_tracker_tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2A6A505D2C71AE3900BA5597 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A6A50712C71AE3A00BA5597 /* health_tracker.xcdatamodeld in Sources */,
+				2A00ADDF2C74DF1B0019D2F6 /* Steps+CoreDataClass.swift in Sources */,
+				2A00ADE02C74DF1B0019D2F6 /* Steps+CoreDataProperties.swift in Sources */,
+				2A6A50792C71AEC900BA5597 /* health_tracker.xcdatamodeld in Sources */,
+				2A00ADC92C74B36F0019D2F6 /* Activity+CoreDataClass.swift in Sources */,
+				2A00ADE22C761ABF0019D2F6 /* LoginView.swift in Sources */,
+				2A00ADCA2C74B36F0019D2F6 /* Activity+CoreDataProperties.swift in Sources */,
 				2A6A506E2C71AE3A00BA5597 /* Persistence.swift in Sources */,
+				2A00ADD02C74C93B0019D2F6 /* MetricsView.swift in Sources */,
+				2AF010272C7237E9006D47C8 /* User+CoreDataClass.swift in Sources */,
+				2AF010332C723AC9006D47C8 /* FoodItem+CoreDataClass.swift in Sources */,
+				2A00ADD22C74CD930019D2F6 /* ActivitySummaryView.swift in Sources */,
+				2AF0103E2C730632006D47C8 /* Styles.swift in Sources */,
+				2A00ADCE2C74C8400019D2F6 /* FoodLogView.swift in Sources */,
+				2A00ADD42C74DB660019D2F6 /* ProfileView.swift in Sources */,
+				2AF010402C732E5D006D47C8 /* AddingFoodView.swift in Sources */,
+				2AF010342C723AC9006D47C8 /* FoodItem+CoreDataProperties.swift in Sources */,
+				2AF010372C723AC9006D47C8 /* FoodLog+CoreDataClass.swift in Sources */,
+				2AF010382C723AC9006D47C8 /* FoodLog+CoreDataProperties.swift in Sources */,
+				2A00ADDB2C74DD960019D2F6 /* Vitals+CoreDataClass.swift in Sources */,
+				2A00ADDC2C74DD960019D2F6 /* Vitals+CoreDataProperties.swift in Sources */,
+				2AF010282C7237E9006D47C8 /* User+CoreDataProperties.swift in Sources */,
 				2A6A50672C71AE3900BA5597 /* ContentView.swift in Sources */,
 				2A6A50652C71AE3900BA5597 /* health_trackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A80BC552C7C543C00483007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A80BC622C7C543D00483007 /* StepsWidgetLiveActivity.swift in Sources */,
+				2A80BC602C7C543D00483007 /* StepsWidgetBundle.swift in Sources */,
+				2A80BC642C7C543D00483007 /* StepsWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2A00AE092C77191D0019D2F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A6A50602C71AE3900BA5597 /* health-tracker */;
+			targetProxy = 2A00AE082C77191D0019D2F6 /* PBXContainerItemProxy */;
+		};
+		2A80BC692C7C543E00483007 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A80BC582C7C543C00483007 /* StepsWidgetExtension */;
+			targetProxy = 2A80BC682C7C543E00483007 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2A00AE0B2C77191D0019D2F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VFMMKQ4CEK;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taha.chaudhry.health-tracker-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/health-tracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/health-tracker";
+			};
+			name = Debug;
+		};
+		2A00AE0C2C77191D0019D2F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VFMMKQ4CEK;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taha.chaudhry.health-tracker-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/health-tracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/health-tracker";
+			};
+			name = Release;
+		};
 		2A6A50722C71AE3A00BA5597 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -275,8 +618,10 @@
 		2A6A50752C71AE3A00BA5597 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"health-tracker/Preview Content\"";
@@ -304,8 +649,10 @@
 		2A6A50762C71AE3A00BA5597 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"health-tracker/Preview Content\"";
@@ -330,9 +677,72 @@
 			};
 			name = Release;
 		};
+		2A80BC6C2C7C543E00483007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VFMMKQ4CEK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StepsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StepsWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taha.chaudhry.health-tracker.StepsWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A80BC6D2C7C543E00483007 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VFMMKQ4CEK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StepsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StepsWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taha.chaudhry.health-tracker.StepsWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2A00AE0A2C77191D0019D2F6 /* Build configuration list for PBXNativeTarget "health-tracker-tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A00AE0B2C77191D0019D2F6 /* Debug */,
+				2A00AE0C2C77191D0019D2F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2A6A505C2C71AE3900BA5597 /* Build configuration list for PBXProject "health-tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -351,16 +761,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2A80BC6B2C7C543E00483007 /* Build configuration list for PBXNativeTarget "StepsWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A80BC6C2C7C543E00483007 /* Debug */,
+				2A80BC6D2C7C543E00483007 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2A6A506F2C71AE3A00BA5597 /* health_tracker.xcdatamodeld */ = {
+		2A6A50772C71AEC900BA5597 /* health_tracker.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2A6A50702C71AE3A00BA5597 /* health_tracker.xcdatamodel */,
+				2A6A50782C71AEC900BA5597 /* health_tracker.xcdatamodel */,
 			);
-			currentVersion = 2A6A50702C71AE3A00BA5597 /* health_tracker.xcdatamodel */;
-			path = health_tracker.xcdatamodeld;
+			currentVersion = 2A6A50782C71AEC900BA5597 /* health_tracker.xcdatamodel */;
+			name = health_tracker.xcdatamodeld;
+			path = "/Users/tahachaudhry/Development/ios-apps/swiftUI-apps/health-tracker/health-tracker/health_tracker.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -1,0 +1,32 @@
+{
+  "user": {
+    "name": "Taha Chaudhry",
+    "age": 17,
+    "weight": 60,
+    "sex": "Male",
+    "activity": {
+      "name": "Running",
+      "averageHeartbeat": 90,
+      "caloriesBurned": 173,
+      "timeElapsed": 468
+    },
+    "foodLog": {
+      "caloriesConsumed": 850,
+      "mealsHad": 3,
+      "items": [
+        {
+          "name": "Apple",
+          "calories": 200
+        },
+        {
+          "name": "Orange",
+          "calories": 150
+        },
+        {
+          "name": "Banana",
+          "calories": 500
+        }
+      ]
+    }
+  }
+}
