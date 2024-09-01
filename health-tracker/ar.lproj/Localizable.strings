@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  health-tracker
+
+  Created by Taha Chaudhry on 28/08/2024.
+  
+*/
+
+//"Hey %@" = "%@ يا";
+"Hey %@!" = "يا %@!";
+"Today's Metrics" = "مقاييس اليوم";
+"Running" = "جري";
+"Apple" = "تفاحة";
+"Banana" = "موز";
+"Orange" = "برتقال";
+"Login" = "تسجيل الدخول";
+"Full Name" = "الاسم الكامل";
+"Weight" = "وزن";
+"Sex" = "الجنس";
+"Steps" = "خطوات";
+
+"%@ elapsed" = "%@ منقضي";
+

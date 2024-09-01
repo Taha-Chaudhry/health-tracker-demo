@@ -27,7 +27,7 @@ struct ActivitySummaryView: View {
                         Image(systemName: "figure.run")
                             .foregroundStyle(.white)
                     }
-                    Text("\(viewModel.activity.wrappedName)")
+                    Text(LocalizedStringKey(viewModel.activity.wrappedName))
                         .font(.title3)
                         .bold()
                         .foregroundStyle(.white)
@@ -71,6 +71,7 @@ struct ActivitySummaryView: View {
     VStack {
         ActivitySummaryView(viewModel: PreviewViewModel())
             .preferredColorScheme(.dark)
+            .environment(\.locale, .init(identifier: "ar"))
         Spacer()
     }
 }

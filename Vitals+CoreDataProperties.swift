@@ -2,7 +2,7 @@
 //  Vitals+CoreDataProperties.swift
 //  health-tracker
 //
-//  Created by Taha Chaudhry on 20/08/2024.
+//  Created by Taha Chaudhry on 28/08/2024.
 //
 //
 
@@ -16,14 +16,14 @@ extension Vitals {
         return NSFetchRequest<Vitals>(entityName: "Vitals")
     }
 
-    @NSManaged public var bloodPressure: String?
-    @NSManaged public var breathingRate: String?
+    @NSManaged public var bloodPressure: Int16
+    @NSManaged public var breathingRate: Int16
     @NSManaged public var caloriesBurned: Int16
     @NSManaged public var heartbeat: Int16
     @NSManaged public var id: UUID?
-    @NSManaged public var temperature: String?
-    @NSManaged public var user: User?
+    @NSManaged public var temperature: Int16
     @NSManaged public var stepData: NSSet?
+    @NSManaged public var user: User?
 
 }
 

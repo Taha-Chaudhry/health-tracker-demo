@@ -13,8 +13,6 @@
 		2A00ADD02C74C93B0019D2F6 /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADCF2C74C93B0019D2F6 /* MetricsView.swift */; };
 		2A00ADD22C74CD930019D2F6 /* ActivitySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADD12C74CD930019D2F6 /* ActivitySummaryView.swift */; };
 		2A00ADD42C74DB660019D2F6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADD32C74DB660019D2F6 /* ProfileView.swift */; };
-		2A00ADDB2C74DD960019D2F6 /* Vitals+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADD72C74DD950019D2F6 /* Vitals+CoreDataClass.swift */; };
-		2A00ADDC2C74DD960019D2F6 /* Vitals+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADD82C74DD950019D2F6 /* Vitals+CoreDataProperties.swift */; };
 		2A00ADDF2C74DF1B0019D2F6 /* Steps+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADDD2C74DF1B0019D2F6 /* Steps+CoreDataClass.swift */; };
 		2A00ADE02C74DF1B0019D2F6 /* Steps+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADDE2C74DF1B0019D2F6 /* Steps+CoreDataProperties.swift */; };
 		2A00ADE22C761ABF0019D2F6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00ADE12C761ABF0019D2F6 /* LoginView.swift */; };
@@ -22,6 +20,9 @@
 		2A00AE0F2C771DC20019D2F6 /* userResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A00AE0E2C771DC20019D2F6 /* userResponse.json */; };
 		2A00AE132C771E590019D2F6 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A00AE122C771E590019D2F6 /* user.json */; };
 		2A1483582C7C590E009A64F2 /* mockUserData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A1483572C7C590E009A64F2 /* mockUserData.json */; };
+		2A14835B2C7F0FB7009A64F2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A1483592C7F0FB7009A64F2 /* Localizable.strings */; };
+		2A1483752C7F237F009A64F2 /* Vitals+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1483732C7F237F009A64F2 /* Vitals+CoreDataClass.swift */; };
+		2A1483762C7F237F009A64F2 /* Vitals+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1483742C7F237F009A64F2 /* Vitals+CoreDataProperties.swift */; };
 		2A6A50652C71AE3900BA5597 /* health_trackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A50642C71AE3900BA5597 /* health_trackerApp.swift */; };
 		2A6A50672C71AE3900BA5597 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6A50662C71AE3900BA5597 /* ContentView.swift */; };
 		2A6A50692C71AE3A00BA5597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A6A50682C71AE3A00BA5597 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		2A80BC642C7C543D00483007 /* StepsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80BC632C7C543D00483007 /* StepsWidget.swift */; };
 		2A80BC662C7C543E00483007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A80BC652C7C543E00483007 /* Assets.xcassets */; };
 		2A80BC6A2C7C543E00483007 /* StepsWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2A80BC592C7C543C00483007 /* StepsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A831D1C2C8467BD000BB71A /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A831D1B2C8467BD000BB71A /* ViewModelTests.swift */; };
 		2AF010272C7237E9006D47C8 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF010252C7237E9006D47C8 /* User+CoreDataClass.swift */; };
 		2AF010282C7237E9006D47C8 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF010262C7237E9006D47C8 /* User+CoreDataProperties.swift */; };
 		2AF010332C723AC9006D47C8 /* FoodItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0102B2C723AC9006D47C8 /* FoodItem+CoreDataClass.swift */; };
@@ -83,8 +85,6 @@
 		2A00ADCF2C74C93B0019D2F6 /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
 		2A00ADD12C74CD930019D2F6 /* ActivitySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySummaryView.swift; sourceTree = "<group>"; };
 		2A00ADD32C74DB660019D2F6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		2A00ADD72C74DD950019D2F6 /* Vitals+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vitals+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2A00ADD82C74DD950019D2F6 /* Vitals+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vitals+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2A00ADDD2C74DF1B0019D2F6 /* Steps+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Steps+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2A00ADDE2C74DF1B0019D2F6 /* Steps+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Steps+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2A00ADE12C761ABF0019D2F6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -93,6 +93,10 @@
 		2A00AE0E2C771DC20019D2F6 /* userResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userResponse.json; sourceTree = "<group>"; };
 		2A00AE122C771E590019D2F6 /* user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		2A1483572C7C590E009A64F2 /* mockUserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockUserData.json; sourceTree = "<group>"; };
+		2A14835A2C7F0FB7009A64F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2A14835C2C7F0FC3009A64F2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2A1483732C7F237F009A64F2 /* Vitals+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vitals+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2A1483742C7F237F009A64F2 /* Vitals+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vitals+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2A6A50612C71AE3900BA5597 /* health-tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "health-tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A6A50642C71AE3900BA5597 /* health_trackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = health_trackerApp.swift; sourceTree = "<group>"; };
 		2A6A50662C71AE3900BA5597 /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		2A80BC632C7C543D00483007 /* StepsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsWidget.swift; sourceTree = "<group>"; };
 		2A80BC652C7C543E00483007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A80BC672C7C543E00483007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A831D1B2C8467BD000BB71A /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		2AF010252C7237E9006D47C8 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2AF010262C7237E9006D47C8 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2AF0102B2C723AC9006D47C8 /* FoodItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -158,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				2A00AE062C77191D0019D2F6 /* health_tracker_tests.swift */,
+				2A831D1B2C8467BD000BB71A /* ViewModelTests.swift */,
 			);
 			path = "health-tracker-tests";
 			sourceTree = "<group>";
@@ -190,10 +196,10 @@
 		2A6A50582C71AE3900BA5597 = {
 			isa = PBXGroup;
 			children = (
+				2A1483732C7F237F009A64F2 /* Vitals+CoreDataClass.swift */,
+				2A1483742C7F237F009A64F2 /* Vitals+CoreDataProperties.swift */,
 				2A00ADDD2C74DF1B0019D2F6 /* Steps+CoreDataClass.swift */,
 				2A00ADDE2C74DF1B0019D2F6 /* Steps+CoreDataProperties.swift */,
-				2A00ADD72C74DD950019D2F6 /* Vitals+CoreDataClass.swift */,
-				2A00ADD82C74DD950019D2F6 /* Vitals+CoreDataProperties.swift */,
 				2A00ADC72C74B36F0019D2F6 /* Activity+CoreDataClass.swift */,
 				2A00ADC82C74B36F0019D2F6 /* Activity+CoreDataProperties.swift */,
 				2AF0102B2C723AC9006D47C8 /* FoodItem+CoreDataClass.swift */,
@@ -224,6 +230,7 @@
 		2A6A50632C71AE3900BA5597 /* health-tracker */ = {
 			isa = PBXGroup;
 			children = (
+				2A1483592C7F0FB7009A64F2 /* Localizable.strings */,
 				2A6A50642C71AE3900BA5597 /* health_trackerApp.swift */,
 				2A6A50662C71AE3900BA5597 /* ContentView.swift */,
 				2A00ADE12C761ABF0019D2F6 /* LoginView.swift */,
@@ -350,6 +357,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 2A6A50582C71AE3900BA5597;
 			packageReferences = (
@@ -378,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A6A506C2C71AE3A00BA5597 /* Preview Assets.xcassets in Resources */,
+				2A14835B2C7F0FB7009A64F2 /* Localizable.strings in Resources */,
 				2A00AE132C771E590019D2F6 /* user.json in Resources */,
 				2A00AE0F2C771DC20019D2F6 /* userResponse.json in Resources */,
 				2A6A50692C71AE3A00BA5597 /* Assets.xcassets in Resources */,
@@ -400,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A831D1C2C8467BD000BB71A /* ViewModelTests.swift in Sources */,
 				2A00AE072C77191D0019D2F6 /* health_tracker_tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,14 +430,14 @@
 				2AF010332C723AC9006D47C8 /* FoodItem+CoreDataClass.swift in Sources */,
 				2A00ADD22C74CD930019D2F6 /* ActivitySummaryView.swift in Sources */,
 				2AF0103E2C730632006D47C8 /* Styles.swift in Sources */,
+				2A1483752C7F237F009A64F2 /* Vitals+CoreDataClass.swift in Sources */,
+				2A1483762C7F237F009A64F2 /* Vitals+CoreDataProperties.swift in Sources */,
 				2A00ADCE2C74C8400019D2F6 /* FoodLogView.swift in Sources */,
 				2A00ADD42C74DB660019D2F6 /* ProfileView.swift in Sources */,
 				2AF010402C732E5D006D47C8 /* AddingFoodView.swift in Sources */,
 				2AF010342C723AC9006D47C8 /* FoodItem+CoreDataProperties.swift in Sources */,
 				2AF010372C723AC9006D47C8 /* FoodLog+CoreDataClass.swift in Sources */,
 				2AF010382C723AC9006D47C8 /* FoodLog+CoreDataProperties.swift in Sources */,
-				2A00ADDB2C74DD960019D2F6 /* Vitals+CoreDataClass.swift in Sources */,
-				2A00ADDC2C74DD960019D2F6 /* Vitals+CoreDataProperties.swift in Sources */,
 				2AF010282C7237E9006D47C8 /* User+CoreDataProperties.swift in Sources */,
 				2A6A50672C71AE3900BA5597 /* ContentView.swift in Sources */,
 				2A6A50652C71AE3900BA5597 /* health_trackerApp.swift in Sources */,
@@ -458,6 +468,18 @@
 			targetProxy = 2A80BC682C7C543E00483007 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2A1483592C7F0FB7009A64F2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A14835A2C7F0FB7009A64F2 /* en */,
+				2A14835C2C7F0FC3009A64F2 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2A00AE0B2C77191D0019D2F6 /* Debug */ = {

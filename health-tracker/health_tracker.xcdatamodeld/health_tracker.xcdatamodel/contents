@@ -58,12 +58,12 @@
         </uniquenessConstraints>
     </entity>
     <entity name="Vitals" representedClassName="Vitals" syncable="YES">
-        <attribute name="bloodPressure" optional="YES" attributeType="String"/>
-        <attribute name="breathingRate" optional="YES" attributeType="String"/>
+        <attribute name="bloodPressure" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="breathingRate" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="caloriesBurned" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="heartbeat" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="temperature" optional="YES" attributeType="String"/>
+        <attribute name="temperature" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="stepData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Steps" inverseName="vitals" inverseEntity="Steps"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="vitals" inverseEntity="User"/>
     </entity>

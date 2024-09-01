@@ -74,19 +74,23 @@ struct NoItemsView: View {
 struct ItemScrollView: View {
     @ObservedObject public var viewModel: ViewModel
     public var foodLog: Array<FoodItem>
-    
+    var string = "dddd"
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             ForEach(foodLog, id: \.self) { item in
                 Divider()
                 HStack {
-                    Text("• \(item.wrappedName)")
-                        .font(.subheadline)
+                    HStack {
+                        Text("•")
+                            .bold()
+                        Text(LocalizedStringKey(item.wrappedName))
+                    }
+                    .font(.subheadline)
                     Spacer()
                     HStack {
                         Text("\(item.calories)")
                             .font(.title2)
-                        Text("kcal")
+                        Text("cal")
                             .font(.subheadline)
                             .padding(.trailing, 12)
                     }
@@ -110,4 +114,5 @@ struct ItemScrollView: View {
 
 #Preview {
     FoodLogView(viewModel: PreviewViewModel())
+        .environment(\.locale, .init(identifier: "ar"))
 }

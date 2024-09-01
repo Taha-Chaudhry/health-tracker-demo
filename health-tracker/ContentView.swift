@@ -20,7 +20,6 @@ func loadMockUserData(context: NSManagedObjectContext) {
       
       let decoder = JSONDecoder()
       let response = try decoder.decode(Response.self, from: data)
-      
       let myUser = User(context: context)
       myUser.id = UUID()
       myUser.name = response.user.name
@@ -60,6 +59,16 @@ func loadMockUserData(context: NSManagedObjectContext) {
       
       myUser.foodLog = myFoodLog
       
+      let myVitals = Vitals(context: context)
+      myVitals.id = UUID()
+      myVitals.bloodPressure = Int16(response.user.vitals.bloodPressure)
+      myVitals.breathingRate = Int16(response.user.vitals.breathingRate)
+      myVitals.caloriesBurned = Int16(response.user.vitals.caloriesBurned)
+      myVitals.heartbeat = Int16(response.user.vitals.heartbeat)
+      myVitals.temperature = Int16(response.user.vitals.temperature)
+      
+      myUser.vitals = myVitals
+      
       try context.save()
       
    } catch {
@@ -71,32 +80,41 @@ func loadMockUserData(context: NSManagedObjectContext) {
 
 
 struct Response: Decodable {
-    let user: UserResponse
+   let user: UserResponse
 }
 
 struct UserResponse: Decodable, Equatable {
-    let name: String
-    let sex: String
-    let age: Int
-    let weight: Int
-    let activity: ActivityResponse
-    let foodLog: FoodLogResponse
+   let name: String
+   let sex: String
+   let age: Int
+   let weight: Int
+   let activity: ActivityResponse
+   let foodLog: FoodLogResponse
+   let vitals: VitalsResponse
 }
 
 struct ActivityResponse: Decodable, Equatable {
-    let name: String
-    let averageHeartbeat: Int
-    let caloriesBurned: Int
-    let timeElapsed: Int
+   let name: String
+   let averageHeartbeat: Int
+   let caloriesBurned: Int
+   let timeElapsed: Int
 }
 
 struct FoodLogResponse: Decodable, Equatable {
-    let items: [FoodItemResponse]
+   let items: [FoodItemResponse]
+}
+
+struct VitalsResponse: Decodable, Equatable {
+   let bloodPressure: Int
+   let breathingRate: Int
+   let caloriesBurned: Int
+   let heartbeat: Int
+   let temperature: Int
 }
 
 struct FoodItemResponse: Decodable, Equatable {
-    let name: String
-    let calories: Int
+   let name: String
+   let calories: Int
 }
 
 struct ContentView: View {
@@ -106,6 +124,14 @@ struct ContentView: View {
       if viewModel.isLoggedIn {
          ScrollView {
             MetricsView(viewModel: viewModel)
+            
+            Button("Print Vitals") {
+               print(viewModel.vitals)
+            }
+            
+            Button("Print Activity") {
+               print(viewModel.activity)
+            }
             
             if viewModel.activity.wrappedName != "Activity name not found" {
                ActivitySummaryView(viewModel: viewModel)
@@ -161,8 +187,10 @@ class ViewModel: ObservableObject {
    @Published public var addedFoodName: String = ""
    @Published public var addedFoodCalories: String = ""
    
+   public var testContext: NSManagedObjectContext?
+   
    var viewContext: NSManagedObjectContext {
-      PersistenceController.shared.container.viewContext
+      testContext ?? PersistenceController.shared.container.viewContext
    }
    
    @Published var users: [User] = []
@@ -181,8 +209,17 @@ class ViewModel: ObservableObject {
       return activities.first ?? Activity(context: viewContext)
    }
    
+   @Published var vitalsArray: [Vitals] = []
+   var vitals: Vitals {
+      return vitalsArray.first ?? Vitals(context: viewContext)
+   }
+   
    init() {
       fetchData()
+   }
+   
+   init(testContext: NSManagedObjectContext? = nil) {
+      self.testContext = testContext
    }
    
    func fetchData() {
@@ -193,6 +230,7 @@ class ViewModel: ObservableObject {
          fetchUsers()
          fetchFoodLog()
          fetchActivity()
+         fetchVitals()
       }
    }
    
@@ -288,7 +326,7 @@ class ViewModel: ObservableObject {
          guard let self = self else { return }
          
          do {
-            guard let _ = user.id else { return logger.error("No user with that id") }
+            guard let _ = user.id else { return logger.error("No User with that id for FoodLog") }
             
             let request: NSFetchRequest<FoodLog> = FoodLog.fetchRequest()
             request.predicate = NSPredicate(format: "user.id == %@", user.id! as NSUUID)
@@ -311,7 +349,7 @@ class ViewModel: ObservableObject {
          guard let self = self else { return }
          
          do {
-            guard let _ = user.id else { return logger.error("No user with that id") }
+            guard let _ = user.id else { return logger.error("No User with that id for Activity") }
             
             let request: NSFetchRequest<Activity> = Activity.fetchRequest()
             request.predicate = NSPredicate(format: "user.id == %@", user.id! as NSUUID)
@@ -320,6 +358,29 @@ class ViewModel: ObservableObject {
             
             DispatchQueue.main.async {
                self.activities = fetchedActivities
+            }
+         } catch {
+            logger.error("Error fetching data: \(error)")
+         }
+      }
+   }
+   
+   func fetchVitals() {
+      DispatchQueue.global(qos: .background).async { [weak self] in
+         guard let self = self else { return }
+         
+         do {
+            guard let _ = user.id else { return logger.error("No user with that id") }
+            
+            let request: NSFetchRequest<Vitals> = Vitals.fetchRequest()
+            request.predicate = NSPredicate(format: "user.id == %@", user.id! as NSUUID)
+            
+            let fetchedVitals = try self.viewContext.fetch(request)
+            
+            DispatchQueue.main.async {
+               self.vitalsArray = fetchedVitals
+//               print("VITALSSSS")
+//               print(self.vitalsArray.first)
             }
          } catch {
             logger.error("Error fetching data: \(error)")
@@ -475,6 +536,7 @@ class PreviewViewModel: ViewModel {
       fetchUsers()
       fetchFoodLog()
       fetchActivity()
+      fetchVitals()
    }
 }
 
@@ -487,6 +549,7 @@ class PreviewViewModel: ViewModel {
 #Preview {
     ContentView(viewModel: PreviewViewModel())
         .preferredColorScheme(.dark)
+        .environment(\.locale, .init(identifier: "ar"))
 }
 
 // MARK: Sleep/Steps Charts

@@ -7,7 +7,6 @@
 
 import XCTest
 
-
 final class health_tracker_tests: XCTestCase {
 
     override func setUpWithError() throws {

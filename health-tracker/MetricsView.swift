@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MetricsView: View {
     @ObservedObject public var viewModel: ViewModel
+    var string = "d"
     var body: some View {
         VStack {
             HStack {
@@ -51,7 +52,7 @@ struct MetricsView: View {
                             .foregroundStyle(.white)
                             .font(.system(size: 40))
                     }
-                    Text("1000 CAL")
+                    Text("\(viewModel.vitals.caloriesBurned) CAL")
                         .font(.footnote)
                         .bold()
                     ProgressView(value: 0.8)
@@ -79,7 +80,7 @@ struct MetricsView: View {
                             .font(.system(size: 40))
                     }
                     
-                    Text("90 BPM")
+                    Text("\(viewModel.vitals.heartbeat) BPM")
                         .font(.footnote)
                         .bold()
                 }.padding([.bottom])
@@ -121,4 +122,5 @@ struct MetricsView: View {
         MetricsView(viewModel: PreviewViewModel())
         Spacer()
     }
+    .environment(\.locale, .init(identifier: "ar"))
 }
