@@ -66,7 +66,7 @@ struct LoginView: View {
             HStack (alignment: .firstTextBaseline) {
                Text("\(viewModel.weight)")
                   .font(.system(size: 50))
-               Text("lbs")
+               Text("kg")
                   .foregroundStyle(.secondary)
             }
          } onIncrement: {
