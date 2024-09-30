@@ -9,6 +9,17 @@ An iOS app that shows users their health data easily. Used to showcase modern Sw
 - MVVM Architecture
 
 
+# Preview
+
+<img width="1423" alt="Screenshot 2024-09-25 at 3 24 33 PM" src="https://github.com/user-attachments/assets/71d3b63b-ed16-4459-87d1-db3c5da48821">
+
+<img width="1045" alt="Screenshot 2024-09-30 at 4 21 01 PM" src="https://github.com/user-attachments/assets/661d743f-4899-436f-a92f-b737753447c3">
+
+<img width="1044" alt="Screenshot 2024-09-30 at 3 46 07 PM" src="https://github.com/user-attachments/assets/c34e2dc0-44ce-4366-8966-b55601a55081">
+
+## Todo
+- Widgets
+- Live Activities
 
 
 ## Test Data
@@ -65,11 +76,3 @@ docker run -it --rm \
   -v PATH/TO/WireMockData:/home/wiremock \
   wiremock/wiremock:3.9.1
 ```
-
-
-
-<img width="1423" alt="Screenshot 2024-09-25 at 3 24 33 PM" src="https://github.com/user-attachments/assets/71d3b63b-ed16-4459-87d1-db3c5da48821">
-
-### Todo
-- Widgets
-- Live Activities
