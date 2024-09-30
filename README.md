@@ -17,11 +17,6 @@ An iOS app that shows users their health data easily. Used to showcase modern Sw
 
 <img width="1044" alt="Screenshot 2024-09-30 at 3 46 07 PM" src="https://github.com/user-attachments/assets/c34e2dc0-44ce-4366-8966-b55601a55081">
 
-## Todo
-- Widgets
-- Live Activities
-
-
 ## Test Data
 By default, test data is taken from the `mockUserData.json` file:
 ```json
@@ -76,3 +71,7 @@ docker run -it --rm \
   -v PATH/TO/WireMockData:/home/wiremock \
   wiremock/wiremock:3.9.1
 ```
+
+## Todo
+- Widgets
+- Live Activities
